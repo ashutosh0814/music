@@ -1,4 +1,6 @@
-.card{
+
+.card-h{
     width: 18rem;
-    margin-top: 3rem    ;
+    margin: 25px;
+    display: inline-block;
 }

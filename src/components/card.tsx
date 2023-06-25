@@ -1,21 +1,32 @@
-import React from 'react'
-import './card.css'
+import React from "react";
+import "./card.css";
+import { CardProp } from "../models/types";
 
-type Props = {}
-
-const Card = (props: Props) => {
-  return (
-    <div className="card style">
-  <img src="https://lovelace-media.imgix.net/uploads/249/304fa5e0-0a8c-0132-706c-0add9426c766.png" className="card-img-top" alt="..."/>
-  <div className="card-body">
-    <h5 className="card-title">Anaconda</h5>
-    <p className="card-text"></p>
-  </div>
-  <ul className="bg-success list-group list-group-flush">
-    <li className="list-group-item">Nicki Minaj</li>
-  </ul>
-</div>
-  )
+interface SongCardProps {
+  song: CardProp;
 }
+
+const Card = ({ song }:  SongCardProps) => {
+  const { title, artist, photo_url } = song;
+
+  return (
+    <div className="card-h">
+      <div className="card style">
+        <img
+          src={photo_url}
+          className="card-img-top"
+          alt="..."
+        />
+        <div className="card-body">
+          <h5 className="card-title">{title}</h5>
+          <p className="card-text"></p>
+        </div>
+        <ul className="bg-success list-group list-group-flush">
+          <li className="list-group-item">{artist}</li>
+        </ul>
+      </div>
+    </div>
+  );
+};
 
 export default Card;

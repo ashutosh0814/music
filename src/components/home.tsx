@@ -1,32 +1,35 @@
-import React, { useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import Card from "./card";
-import Favourite from "./favourite";
-import Playlist from "./playlist";
-import './home.css'
-import { fetchShazam } from "../redux/features/services/shazamCore";
-import { log } from "console";
-import { useEffect } from 'react';
+import "./home.css";
+import {
+  allSongDetails,
+  fetchShazam,
+} from "../redux/features/services/shazamCore";
+import { CardProp } from "../models/types";
 
+type Props = {};
 
-type Props = {
-};
+async function fetchShazamData() {
+  const allSongs = await fetchShazam();
+  return allSongs;
+}
 
- async function  Home()  {
-
-  // const allSongs = await fetchShazam();
-
-  // console.log(allSongs);
-  
-
+async function Home() {
+  let aa = allSongDetails();
   return (
-    <div className="container-fluid col">
+    <div className="">
       <h1 className="heading">Home</h1>
-      <div>
-          <Card/>
+      <div className="card-holder-my">
+        <section className="">
+          <div className="">
+            {(await aa)?.map((song: CardProp) => (
+              <Card song={song} />
+            ))}
+          </div>
+        </section>
       </div>
     </div>
   );
-};
+}
 
 export default Home;
-
