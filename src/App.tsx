@@ -14,7 +14,7 @@ function App() {
     <div className="container-fluid min-vh-100 app">
       <div className="row">
         <div className="col-2 bg-success">
-          <Sidebar />
+          <Sidebar />   asdas 
         </div>
         <div className="col-md position-relative">
           <div className="input-group w-50 search">
