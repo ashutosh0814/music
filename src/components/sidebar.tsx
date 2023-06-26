@@ -1,5 +1,4 @@
 import React from "react";
-import { BiArch, BiBadge } from "react-icons/bi";
 import "./sidebar.css";
 
 type Props = {};

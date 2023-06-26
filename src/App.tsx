@@ -30,7 +30,7 @@ function App() {
             </button>
           </div>
           <div className="">
-            <Home />
+            {/* <Home /> */}
           </div>
         </div>
       </div>
