@@ -6,15 +6,20 @@ import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Sidebar from "./components/sidebar";
 import Home from "./components/home";
-import Favourite from "./components/favourite";
 import Playlist from "./components/playlist";
+import Favourite from "./components/favourite";
+import {BrowserRouter , Routes , Route} from 'react-router-dom'
 
-function App() {
+export interface AppProps{}
+
+const App = (props: AppProps) => {
   return (
+    <BrowserRouter>
+     
     <div className="container-fluid min-vh-100 app">
       <div className="row">
         <div className="col-2 bg-success">
-          <Sidebar />   asdas 
+          <Sidebar />
         </div>
         <div className="col-md position-relative">
           <div className="input-group w-50 search">
@@ -30,12 +35,18 @@ function App() {
             </button>
           </div>
           <div className="">
-            {/* <Home /> */}
+              <Routes>
+                  <Route path='/' element={<Home/>} />
+                  <Route path='/playlist' element={<Playlist/>} />
+                  <Route path='/favourite' element={<Favourite/>} />
+              </Routes>
           </div>
         </div>
       </div>
     </div>
+    
+    </BrowserRouter>
   );
-}
+};
 
 export default App;

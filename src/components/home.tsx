@@ -10,11 +10,11 @@ import { CardProp } from "../models/types";
 type Props = {};
 
 async function fetchShazamData() {
-  const allSongs = await fetchShazam();
+  const allSongs = await fetchShazam(); 
   return allSongs;
 }
 
-async function Home() {
+const Home =(props: Props) => {
   let aa = allSongDetails();
   return (
     <div className="">
@@ -22,9 +22,10 @@ async function Home() {
       <div className="card-holder-my">
         <section className="">
           <div className="">
-            {(await aa)?.map((song: CardProp) => (
+            home
+            {/* {(await aa)?.map((song: CardProp) => (
               <Card song={song} />
-            ))}
+            ))} */}
           </div>
         </section>
       </div>

@@ -10,3 +10,11 @@
     font-weight: 500;
     color: aquamarine;
 }
+
+.anchor{
+    text-decoration: none;
+}
+.links{
+    margin-bottom: 24px;
+    background-color: rgb(226, 185, 243);
+}
